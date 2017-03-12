@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime number checker</title>
+  <style type="text/css">
+    body{
+      background: seagreen;
+    }
+  </style>
+</head>
+<body>
+<center>
+  <h1>Prime number Checker</h1>
+  <input type="number" id="inp" placeholder="Enter a number">
+  <input type="button" id="check" value="Check" onclick="generate()">
+</center>
+<script type="text/javascript">
+  var input=document.getElementById('inp')
+  var divisor
+
+
+  function generate(){
+    var flag=true
+
+    for(var i=2;i<=(input.value/2);i++){
+      if(input.value % i == 0){
+        flag=false
+        divisor=i
+        break
+      }
+    }
+
+    if(flag==true) alert (input.value+'is a prime number')
+      if(flag==false) alert(input.value+'is not a prime number because '+input.value+'is divisible by '+divisor)
+  }
+</script>
+</body>
+</html>
